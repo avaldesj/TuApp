@@ -1,0 +1,60 @@
+<ion-split-pane contentId="content">
+  <ion-menu contentId="content" side="end">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu</ion-title>
+        <ion-buttons slot="start">
+          <ion-button icon-only (click)="closeMenu()">
+            <ion-icon name="close-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content >
+      <!-- --------------------- -->
+      <ion-list  lines="none">
+         <ion-item (click)=" home()" >
+          <ion-icon name="home" class="icono" title="Home"> </ion-icon>
+              Home      
+      </ion-item>
+
+        <ion-item (click)=" login()" >
+          <ion-icon name="person-circle-outline"></ion-icon>
+            Login
+         </ion-item>
+
+        <ion-item (click)="register()">
+          <ion-icon name="receipt-outline"></ion-icon>
+              Register
+        </ion-item>
+
+        <ion-item (click)=" intro()" >
+          <ion-icon name="server-sharp"></ion-icon>
+              Intro
+        </ion-item>
+        
+<!--------------->
+<ion-item >
+  <ion-icon name="apps-sharp"></ion-icon>
+      Lo nuevo
+</ion-item>
+
+<ion-item >
+  <ion-icon name="images-sharp"></ion-icon>
+      Galeria
+</ion-item>
+
+<ion-item >
+  <ion-icon name="call-sharp"></ion-icon>
+     Contactos
+</ion-item>
+<!---------------->
+        <ion-item (click)="logout()">
+          <ion-icon name="stop"></ion-icon>
+              logout
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content" main></ion-router-outlet>
+</ion-split-pane>

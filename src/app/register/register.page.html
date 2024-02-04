@@ -1,0 +1,85 @@
+
+<!--cabezera-->
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+            <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons> 
+    <ion-title class="ion-text-center">Tu App </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card card-center "  >
+  <figure class="ion-text-center">
+    <ion-avatar class="avatar"> 
+      <img src="../../assets/imagenes/logo.jpg" alt="logo" class="logo">
+    </ion-avatar>
+  </figure>
+  <ion-title class="ion-text-center">Ingresa tú Información</ion-title>
+  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+    <ion-item>
+      <ion-input name="bag-outline" label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"
+        autocomplete="email">
+      </ion-input>
+    </ion-item>  
+    <div class="validation-message">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div *ngIf="
+        (registerForm.get('email')?.hasError(validation.type) && 
+        registerForm.get('email')?.dirty)
+        ">{{validation.message}}</div>
+      </ng-container>
+    </div>
+    <ion-item>
+      <ion-input  label="Nombre" labelPlacement="floating" placeholder="Nommbre" formControlName="name"
+       autocomplete="name" >
+      </ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-input label="Apellido" labelPlacement="floating" placeholder="Apellido" formControlName="last_name"
+      autocomplete="name">
+      </ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-input label="password"  placeholder="password" labelPlacement="floating"
+        formControlName="password" value="secreto" type="password"  >
+      </ion-input>
+    </ion-item>
+  
+     <div class="validation-message">
+      <ng-container *ngFor="let validation of validation_messages.password">
+      <div *ngIf="
+       (registerForm.get('password')?.hasError(validation.type) && 
+          registerForm.get('password')?.dirty)
+       ">{{validation.message}}</div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-input label="Confirme Contraseña" labelPlacement="floating" placeholder="Confirme Contraseña"
+        formControlName="confirmation_password" value="secreto" type="password" >
+      </ion-input>
+ 
+    </ion-item>
+    <div class="validation-message">
+      <ng-container  *ngFor=
+      "let validation of validation_messages.confirmation_password">
+      <div *ngIf="(registerForm.get('password')?.value !== registerForm.get('confirmation_password')?.
+                  value && registerForm.get('confirmation_password')?.dirty)
+     
+            ">{{validation.message}}
+      </div>
+      </ng-container>
+    </div>
+ 
+    <ion-button 
+        [disabled]="!registerForm.valid" type="submit" color="green" 
+        expand="block" shape="round">Registrarse
+    </ion-button>
+  </form>
+</ion-card>
+</ion-content>

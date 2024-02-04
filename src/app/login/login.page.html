@@ -1,0 +1,67 @@
+<!-- cabezera-->
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+      <ion-buttons slot="end">
+          <ion-menu-button autoHide="false">
+          </ion-menu-button>
+      </ion-buttons>
+      <ion-title class="ion-text-center">TuApp</ion-title> 
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <figure class="ion-text-center">
+      <ion-avatar class="avatar">
+      <img src="../../assets/imagenes/login.png" alt="logo" class="logo">
+    </ion-avatar>
+  </figure>
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+    <ion-card>
+      <ion-item>
+        <ion-input name="email" label="Email" labelPlacement="floating" 
+                  placeholder="Email" formControlName="email" autocomplete="email">
+          <ion-icon slot="start" name="mail" aria-hidden="true"></ion-icon>
+          <ion-button fill="clear" slot="end" aria-label="Show/hide">
+            <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
+          </ion-button>
+        </ion-input>
+      </ion-item>
+      <div class="validation-message">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div *ngIf="
+          (loginForm.get('email')?.hasError(validation.type) && 
+          loginForm.get('email')?.dirty)
+          ">{{validation.message}}</div>
+        </ng-container>
+      </div>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-input label="password" autocomplete="new-password" placeholder="password" labelPlacement="floating"
+          formControlName="password" value="secreto" type="password">
+          <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
+          <ion-button fill="clear" slot="end" aria-label="Show/hide"  >
+            <ion-icon slot="icon-only" name="eye" aria-hidden="true" (click)="eye()"></ion-icon>
+          </ion-button>
+        </ion-input>
+      </ion-item>
+          <div class="validation-message">
+            <ng-container *ngFor="let validation of validation_messages.password">
+            <div *ngIf="
+             (loginForm.get('password')?.hasError(validation.type) && 
+                loginForm.get('password')?.dirty)
+             ">{{validation.message}}</div>
+            </ng-container>
+          </div>
+    </ion-card>
+    <ion-button [disabled]="!loginForm.valid" type="submit" color="danger"
+              expand="block" shape="round">Login
+    </ion-button>
+    <div class="forgot-password">
+      <a href="#">recupera tú contraseña</a>
+  </div>
+  </form>
+  <div class="validation-message ">
+     {{loginMessage}}
+  </div> 
+</ion-content>

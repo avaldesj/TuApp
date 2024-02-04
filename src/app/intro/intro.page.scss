@@ -1,0 +1,117 @@
+
+swiper-container{
+    width: 100%;
+    height: 100%;
+  }
+  swiper-slide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  }
+  .avatar{
+    --border-radius: 0%;
+  }
+  
+  .h1{
+    font-family: 'Impact', sans-serif; 
+    color: rgb(202, 247, 6); 
+    text-align: left; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  .h2 {
+    font-family: 'Bloodcrowc', 'Impact', 'Arial Narrow Bold', sans-serif;
+    font-size: 2 em; 
+    color: #0bf090; 
+    text-align: left; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    margin-bottom: 5px; 
+}
+
+.h3{
+
+  font-family:  'Laika', 'Bloodcrowc', 'Impact', 'Arial Narrow Bold', sans-serif;
+  font-size: 1.5em;  
+  color: grey; 
+  text-align: left; 
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin-bottom: 5px; 
+}
+.text{
+  font-family: 'CineFont', 'Bloodcrowc', 'Impact', 'Arial Narrow Bold', sans-serif;
+  font-size: 1.5em;  
+  color: gray; 
+  text-align: justify; 
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin-bottom: 5px; 
+
+}
+.toolbar{
+
+  --background: rgb(243, 41, 243);
+}
+
+
+     
+  .card{
+    font-family: 'Impact', sans-serif; 
+    color: rgba(192, 238, 85, 0.774); 
+    text-align: justify; 
+    letter-spacing: 1px;
+    display: inline-block;
+    border: 2.5px ;
+    height: 400px; 
+    position: relative;
+    
+  }
+  
+  .sub{ 
+    font-family: bradley Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(255, 0, 212);
+    text-align: left;
+  }
+
+.img{
+  display: block;
+  margin: auto;
+  border: 2.5px ;
+  height: 150px;
+  width: 230px;
+  
+}
+.icono {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+
+.menu {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+button {
+  color: white;
+  margin-right: 10px;
+}
+
+.slide-1{
+  --background: 
+  url(../../assets/imagenes/fondo.avif) 0 0/100% 100% no-repeat;
+ 
+  
+}
+

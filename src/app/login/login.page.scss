@@ -1,0 +1,40 @@
+.avatar{
+    margin: auto;
+}
+
+.card {
+    font-family: 'Impact', sans-serif;
+    color: black;
+    text-align: justify;
+    letter-spacing: 1px;
+    display: inline-block;
+    border: 0.5px solid groove;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // sombra
+    height: auto;
+    width: 300px;
+    margin: 7px;
+    position: relative;
+
+}
+
+
+.validation-message {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px  #ccc;
+    border-radius: 2px;
+    background-color: whitesmoke;
+    color: rgb(248, 21, 21);
+    font-weight:lighter;
+    font-family: 'Segoe UI', Tahoma;
+}
+
+  .forgot-password {
+    position: relative;
+    bottom: 0%;
+    font: small-caps 100%/200% serif;
+    text-align: center;
+}
+

@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { register } from 'swiper/element/bundle';
+import { Storage } from '@ionic/storage-angular';
+import { NavController } from '@ionic/angular';
+
+register();
 
 @Component({
   selector: 'app-root',
@@ -6,5 +11,12 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private storage: Storage,
+              private navCtrl: NavController) {}
+
+  async ngOnInit() {
+    await this.storage.create();
+  }
+  
 }
+
